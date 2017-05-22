@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog 추가</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        <form action="{% url 'blog:create' %}" method="POST">
+            {% csrf_token %}
+            <div>
+                제목 : <input type="text" name="title">
+            </div>
+            <div>
+                내용 : <textarea name="context"></textarea>
+            </div>
+            <div>
+                작성자 : <input type="text" name="author">
+            </div>
+            <div>
+                <input type="submit" value="확인">
+            </div>
+        </form>
+    </body>
+</html>

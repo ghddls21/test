@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block title %}blog_Detail{% endblock %}
+{% block content %}
+        <div class="container" style="padding: 60px 15px 0;">
+            <div class="post">
+                <h1 class="post-title">{{ blog_table.제목 }}</h1>
+                <div class="post-date">
+                    <span><h3>{{ blog_table.수정일 }}</h3></span>
+                </div>
+                <div class="">
+                    <p>{{ blog_table.내용 }}</p>
+                </div>
+                <div class="">
+                    Create By : {{ blog_table.작성자 }}
+                </div>
+                <div>
+                    <button type="button"
+                        onclick="document.location.href='{% url 'blog:update' blog_table.id %}'">수정</button>
+                    <button type="button"
+                        onclick="document.location.href='{% url 'blog:delete' blog_table.id %}'">삭제</button>
+                </div>
+            </div>
+        </div>
+ {% endblock %}
+

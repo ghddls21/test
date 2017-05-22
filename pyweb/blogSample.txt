@@ -1,0 +1,7 @@
+제목|내용|조회수|작성자
+Install it|Next, run the Django command-line utility to create the database tables automatically:|10|admin
+Enjoy the free API|With that, you’ve got a free, and rich, Python API to access your data. The API is created on the fly, no code generation necessary:|20|admin
+Design your URLs|A clean, elegant URL scheme is an important detail in a high-quality Web application.|15|admin
+Write your views|Each view is responsible for doing one of two things|5|admin
+Design your templates|The code above loads the news/year_archive.html template|5|admin
+This is just the surface|This has been only a quick overview of Django’s functionality. Some more useful features:|5|admin

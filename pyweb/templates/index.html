@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title%}main_Index{% endblock %}</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">PyWeb</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li id="home">
+                            <a href="{% url 'main' %}">Home</a>
+                        </li>
+                        <li id="menu1">
+                            <a href="{% url 'blog:index' %}">Blog</a>
+                        </li>
+                        <li id="menu2">
+                            <a href="{% url 'board:index'%}">Board</a>
+                        </li>
+                        <li id="menu3">
+                            <a href="">메뉴3</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_active %}
+                        <li>
+                            <a href="" >
+                                <span class="glyphicon glyphicon-user"></span>
+                                계정정보
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}" >
+                                <span class="glyphicon glyphicon-log-in"></span>
+                                로그아웃
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="#" >
+                                <span class="glyphicon glyphicon-user"></span>
+                                가입
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login'%}" >
+                                <span class="glyphicon glyphicon-log-in"></span>
+                                로그인
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container" style="padding: 60px 15px 0;">
+        {% block content %}{% endblock %}
+        </div>
+    </body>
+    <script type="text/javascript">
+        document.getElementById("home").className = "active"
+    </script>
+</html>

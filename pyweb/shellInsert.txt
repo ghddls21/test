@@ -1,0 +1,17 @@
+from datetime import datetime
+from blog.models import BlogTable
+
+fo = open('blogSample.txt', 'r')
+context = fo.readlines()
+fo.close()
+for x in context[1:]:
+    tmp = x.split('|')
+    bt = BlogTable()
+    bt.제목 = tmp[0]
+    bt.내용 = tmp[1]
+    bt.조회수 = int(tmp[2])
+    bt.작성자 = tmp[3]
+    t = datetime.now()
+    bt.등록일 = t
+    bt.수정일 = t
+    bt.save()

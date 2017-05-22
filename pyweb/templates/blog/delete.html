@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog 삭제</title>
+        <meta http-equiv="refresh" content="3; url={% url 'blog:index' %}" />
+    </head>
+    <body>
+        {{ blog_table.id }} 번 blog '{{ blog_table.제목 }}'이 삭제 되었습니다.
+    </body>
+</html>
+

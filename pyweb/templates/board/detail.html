@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>{{ board.title }}</title>
+        <link href="bootstrap.css" ref="stylesheet" type="text/css">
+    </head>
+    <script type="text/javascript">
+        
+    </script>
+    <body>
+        <table border=1>
+            <tr>
+                <th>제목:</th>
+                <td>{{board.title}}</td>
+            </tr>
+            <tr>
+                <th>작성자:</th>
+                <td>{{board.author}}</td>
+            </tr>
+            <tr>
+                <th>내용:</th>
+                <td>{{board.context}}</td>
+            </tr>
+        </table>
+        <ol>
+            <li>목록 1</li>
+            <li>목록 2</li>
+            <li>목록 3</li>
+            <li>목록 4</li>
+        </ol>
+        <a href="http://www.naver.com">네이버로 연결</a>
+    <form action="" method="POST">
+        <input type="text">
+        <input type="password">
+        <input type="button">
+        <input type="submit">
+    </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block title %}blog_UPdate{% endblock %}
+{% block content %}
+    <div class="container" style="padding: 60px 15px 0;">
+        <form action="{% url 'blog:update' blog_table.id %}" method="POST">
+            {% csrf_token %}
+            <div>
+                제목 : <input type="text" name="title" value="{{ blog_table.제목 }}">
+            </div>
+            <div>
+                내용 : <textarea name="context">{{ blog_table.내용 }}</textarea>
+            </div>
+            <div>
+                작성자 : <input type="text" name="author" value="{{ blog_table.작성자 }}">
+            </div>
+            <div>
+                <input type="submit" value="확인">
+            </div>
+        </form>
+    </div>
+{% endblock %}

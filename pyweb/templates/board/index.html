@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>뉴스 소식</title>
+    </head>
+    <body>
+        <table border=1>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </tr>
+            {% for info in boardTable %}
+                <tr>
+                    <td>{{ info.id }}</td>
+                    <td>{{ info.title }}</td>
+                    <td>{{ info.author }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
